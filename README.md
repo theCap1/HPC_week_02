@@ -29,12 +29,12 @@ Throughput  | 4 | 4 OPs per cycle when fully loaded
 #### 3.2 Pipeline restrictions
 When the workload is bound by the `fmul` latency only two full FP64 OPs (or 4 FP32 OPs) can be executed every three cycles. That means that the GFLOPs for the _ARM Neoverse V1_ with assumed $2,6$GHz can be calculated as followed:
 
-$
+$$
 \begin{aligned}
 \text{GFLOPs} &= \text{clock frequency} \cdot \frac{\text{(OPs/Instruction)}\cdot \text{pipeline width}}{\text{latency}} \cdot 10^{-9}\\
 \Rightarrow \text{GFLOPs} &= 2,6 \cdot \frac{2 \cdot 2}{3} = 3,4
 \end{aligned}
-$
+$$
 
 However, if my workload is bound by the latency of fmla operations, which has a latency of 4 cycles, the GFLOPS that can be achieved with a single 128-bit FP/ASIMD pipeline would be:
 
