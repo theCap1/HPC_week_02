@@ -38,15 +38,15 @@ $$
 
 However, if my workload is bound by the latency of fmla operations, which has a latency of 4 cycles, the GFLOPS that can be achieved with a single 128-bit FP/ASIMD pipeline would be:
 
-$
+$$
 \text{GFLOPs} = 2,6 \cdot \frac{2 \cdot 2}{4} = 2,6
-$
+$$
 
 In the case where late forwarding is possible and the latency of fmla is reduced to 2 cycles, the GFLOPS that can be achieved with a single 128-bit FP/ASIMD pipeline would be:
 
-$
+$$
 \text{GFLOPs} = 2,6 \cdot \frac{2 \cdot 2}{2} = 5,2
-$
+$$
 
 In summary, the GFLOPS performance of a single FP/ASIMD pipeline is dependent on the latency of the floating-point operations in the workload, as well as the number of floating-point pipelines available. If the workload is latency-bound, having more pipelines will not significantly improve performance, and it's necessary to optimize the code to reduce the number of floating-point operations or improve data locality to improve performance.
 
