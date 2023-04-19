@@ -49,3 +49,39 @@ $
 $
 
 In summary, the GFLOPS performance of a single FP/ASIMD pipeline is dependent on the latency of the floating-point operations in the workload, as well as the number of floating-point pipelines available. If the workload is latency-bound, having more pipelines will not significantly improve performance, and it's necessary to optimize the code to reduce the number of floating-point operations or improve data locality to improve performance.
+
+#### 3.3 Benchmark of `fmla`
+
+<details>
+    <summary> Output FMA </summary>
+<!-- empty line -->
+
+```yaml
+
+```
+
+</details>
+<!-- empty line -->
+
+</br>
+
+![alt text](n_cpu_n_threads.png "bruder")
+*Figure 1: Performance in GFLOPs per threads for FMADD (scalar FMA) and FMLA (vectorial FMA) in single and double precision. Every thread is performed on a separate CPU core.*
+
+#### 3.4 Benchmark of `fmul`
+
+<details>
+    <summary> Output FMA </summary>
+<!-- empty line -->
+
+```yaml
+
+```
+
+</details>
+<!-- empty line -->
+
+</br>
+
+![alt text](n_cpu_n_threads.png "bruder")
+*Figure 1: Performance in GFLOPs per threads for FMADD (scalar FMA) and FMLA (vectorial FMA) in single and double precision. Every thread is performed on a separate CPU core.*
