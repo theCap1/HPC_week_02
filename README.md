@@ -42,7 +42,7 @@ $$
 \text{GFLOPs} = 2,6 \cdot \frac{2 \cdot 2}{4} = 2,6
 $$
 
-In the case where late forwarding is possible and the latency of fmla is reduced to 2 cycles, the GFLOPS that can be achieved with a single 128-bit FP/ASIMD pipeline would be:
+In the case where *late forwarding* is possible and the latency of fmla is reduced to 2 cycles, the GFLOPS that can be achieved with a single 128-bit FP/ASIMD pipeline would be:
 
 $$
 \text{GFLOPs} = 2,6 \cdot \frac{2 \cdot 2}{2} = 5,2
@@ -108,7 +108,7 @@ finished ASIMD microbenchmarks
 
 </br>
 
-As one can easily observe the performance took a big plunge when compared to last week's result. Roughly $\frac{1}{4}$th of the performance is the result when a read-after-write dependence is added to every FMA operation. This can most likely be backtraced to the missing possibility to parallelization. It is only possible to utilize one of four $(\frac{1}{4})$ pipelines which leads to a linearly proportional reduction of the performance.
+As one can easily observe the performance took a big plunge when compared to last week's result. Roughly $\frac{1}{4}$th of the performance is the result when a read-after-write dependence is added to every FMA operation. This can most likely be backtraced to the missing possibility to parallelization. It is only possible to utilize one of four $(\frac{1}{4})$ pipelines which leads to a linearly proportional reduction of the performance. It should be noticed that the measured performance comes extremely close to the theoretical performance of `fmul` when utilizing only one pipeline with *late forwarding* enabled that was calculated in 3.2.
 
 Also some benchmarks with multiple threads on a single CPU core were performed with the following output.
 
